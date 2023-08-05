@@ -109,3 +109,29 @@ Put the performance navigation timings in the right order
 5. stale-while-revalidate -> serves stale content while validating the cached response with the origin server
 
 # Q.9 Garbage Collection
+
+What is true about this code block?
+function addMember(name) {
+return { name, createdAt: Date.now() }
+}
+
+    let obj1 = addMember("John");
+    let obj2 = addMember("Sarah);
+
+    obj1.friend = obj2;
+    obj2.friend = obj1;
+    obj1 = null;
+    obj2 = null;
+
+R:
+
+1. obj1 and obj2 objects will not be garbage collected, learing to memory leak
+2. obj1 and obj2 objects will be garbage collected imediatelly after setting them to null
+3. obj1 and obj2 will only be garbage collected after closing the browser tab
+4. obj1 and obj2 objects can be garbage collected during the next garbage collection cycle
+
+Correct Response: 4
+
+# Q.10 Animation Cost
+
+When animating the following properties which have the correctly listed rendering costs?
