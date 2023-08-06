@@ -135,3 +135,35 @@ Correct Response: 4
 # Q.10 Animation Cost
 
 When animating the following properties which have the correctly listed rendering costs?
+width: Layout > Paint > Composite TRUE
+opacity: Paint > Composite
+background-image: Composite
+left: Layout > Paint > Composite TRUE
+transform: Paint > Composite
+
+# Q.11 Event Propagation
+
+What gets logged when clicking '<button>'?
+
+<div class="outer">
+    <div class="inner">
+        <button>Click me!</button>
+    </div>
+</div>
+
+outer.addEventListener("click", () => log("A"), true)
+outer.addEventListener("click", () => log("B"))
+inner.addEventListener("click", () => log("C"), true)
+inner.addEventListener("click", (e) => {
+log("D");
+e.stopPropagation();
+log("E")
+})
+
+button.addEventListener("click", () => log("F"))
+button.addEventListener("click", () => log("G"), true);
+
+It gets logged:
+A C G F D E
+
+# Q.12 CSS Specificity
