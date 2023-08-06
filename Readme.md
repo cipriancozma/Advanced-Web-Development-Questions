@@ -15,11 +15,13 @@ B. <script defer src="defer1.js" /> // Loads in 200 ms
 C. <script defer src="defer2.js" /> // Loads in 300 ms
 
 Async -> not blocking the parsing of html, it runs the script as soon as it finds it, whithout blocking the parsing
+
 Defer -> waiting for html parsing to be done and after it's starting to run
 
 # Q2. Rendering Pipeline & Composition
 
 Which statements are true?
+
 A. The render tree contains all elements from the DOM and CSSOM combined
 
 B. Compositing is the process of separating layers based on z-index, which are then combined to form the final image displayed on the screen
@@ -47,15 +49,15 @@ Only D is true. (The compositor thread is a thread in the browser that leverages
 
 What gets logged?
 
-setTimeout(() => console.log(1))
+    setTimeout(() => console.log(1))
 
-Promise.resolve().then(() => console.log(2))
+    Promise.resolve().then(() => console.log(2))
 
-Promise.resolve().then(() => setTimeout(() => console.log(3)))
+    Promise.resolve().then(() => setTimeout(() => console.log(3)))
 
-new Promise(() => console.log(4))
+    new Promise(() => console.log(4))
 
-setTimeout(() => console.log(5))
+    setTimeout(() => console.log(5))
 
 It gets logged: 4 2 1 5 3
 
@@ -75,23 +77,24 @@ preload -> prioritizes fetching of critical resources needed for the current nav
 
 What's the output?
 
-const member = {
-name: "Jane",
-address: { street: "101 Main St" }
-}
+    const member = {
+    name: "Jane",
+    address: { street: "101 Main St" }
+    }
 
-const member2 = { ...member }
+    const member2 = { ...member }
 
-member.address.street = "102 Main Str"
-member.name = "Sarah"
+    member.address.street = "102 Main Str"
+    member.name = "Sarah"
 
-console.log(member2)
+    console.log(member2)
 
 R:
-{
-name: "Jane",
-address: { street: "102 Main Str" }
-}
+
+    {
+    name: "Jane",
+    address: { street: "102 Main Str" }
+    }
 
 # Q.7 Performance Navigation Timing
 
@@ -139,33 +142,38 @@ Correct Response: 4
 # Q.10 Animation Cost
 
 When animating the following properties which have the correctly listed rendering costs?
+
 width: Layout > Paint > Composite TRUE
+
 opacity: Paint > Composite
+
 background-image: Composite
+
 left: Layout > Paint > Composite TRUE
+
 transform: Paint > Composite
 
 # Q.11 Event Propagation
 
-What gets logged when clicking '<button>'?
+What gets logged when clicking the button?
 
-<div class="outer">
-    <div class="inner">
-        <button>Click me!</button>
+    <div class="outer">
+        <div class="inner">
+            <button>Click me!</button>
+        </div>
     </div>
-</div>
 
-outer.addEventListener("click", () => log("A"), true)
-outer.addEventListener("click", () => log("B"))
-inner.addEventListener("click", () => log("C"), true)
-inner.addEventListener("click", (e) => {
-log("D");
-e.stopPropagation();
-log("E")
-})
+    outer.addEventListener("click", () => log("A"), true)
+    outer.addEventListener("click", () => log("B"))
+    inner.addEventListener("click", () => log("C"), true)
+    inner.addEventListener("click", (e) => {
+    log("D");
+    e.stopPropagation();
+    log("E")
+    })
 
-button.addEventListener("click", () => log("F"))
-button.addEventListener("click", () => log("G"), true);
+    button.addEventListener("click", () => log("F"))
+    button.addEventListener("click", () => log("G"), true);
 
 It gets logged:
 A C G F D E
