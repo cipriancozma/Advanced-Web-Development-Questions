@@ -191,3 +191,28 @@ A C G F D E
 
 Order the CSS selectors by specificity
 (highest to lowest)
+
+    h1.large-text#title
+
+    h1.large-text[id="title"]
+
+    .large-text:nth-child(1)
+
+    div h1.large-text::before
+
+    div h1:first-child
+
+    h1:not(.small-test)
+
+Specificity:
+
+1. Inline styles
+2. IDs
+3. Classes -> .text
+   Attributes -> [type="input"]
+   Pseudo-classes -> :hover
+
+4. Tags -> h1
+   Pseudo-elements -> ::before
+
+# Q.13 WeakMap
