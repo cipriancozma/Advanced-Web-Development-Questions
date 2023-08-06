@@ -1,17 +1,26 @@
 # Q1. Async & Defer execution order
 
 Put the scripts in the right order of execution
+
 A. <script async src="async1.js" /> // Loads in 300 ms
+
 B. <script defer src="defer1.js" /> // Loads in 200 ms
+
 C. <script defer src="defer2.js" /> // Loads in 300 ms
+
 D. <script async src="async2.js" /> // Loads in 50 ms
+
 E. <script async defer src="asyncdefer1.js" /> // Loads in 60 ms
 
 R:
 D. <script async src="async2.js" /> // Loads in 50 ms
+
 E. <script async defer src="asyncdefer1.js" /> // Loads in 60 ms
+
 A. <script async src="async1.js" /> // Loads in 300 ms
+
 B. <script defer src="defer1.js" /> // Loads in 200 ms
+
 C. <script defer src="defer2.js" /> // Loads in 300 ms
 
 Async -> not blocking the parsing of html, it runs the script as soon as it finds it, whithout blocking the parsing
