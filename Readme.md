@@ -216,3 +216,23 @@ Specificity:
    Pseudo-elements -> ::before
 
 # Q.13 WeakMap
+
+What statements are true?
+
+    const userTokenMap = new WeakMap();
+    let user = { name: "Jane", age: 24 };
+    userTokenMap.set(user, "secret_token");
+
+A. userTokenMap implements the iterator protocol
+
+B. When setting user to null, userTokenMap.size returns 0
+
+C. if the user object is set to null, its userTokenMap entry can be garbage collected
+
+D. [...userTokenMap] returns an array of userTokenMap entries
+
+R: C
+
+# Q.14 Web Vitals
+
+Match the Web Vitals to the correct descriptions:
