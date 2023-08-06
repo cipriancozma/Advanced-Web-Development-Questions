@@ -21,9 +21,13 @@ Defer -> waiting for html parsing to be done and after it's starting to run
 
 Which statements are true?
 A. The render tree contains all elements from the DOM and CSSOM combined
+
 B. Compositing is the process of separating layers based on z-index, which are then combined to form the final image displayed on the screen
+
 C. The layout process asigns colors and images to visual elements in the render tree
+
 D. The compositing process happens on the compositor thread
+
 E. Elements that aren't visible on the page, for example display: hidden, aren't part of the DOM tree
 
 R:
@@ -167,3 +171,6 @@ It gets logged:
 A C G F D E
 
 # Q.12 CSS Specificity
+
+Order the CSS selectors by specificity
+(highest to lowest)
